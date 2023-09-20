@@ -1,0 +1,41 @@
+.title {
+    background-color: beige;
+    color: red;
+    font-size:  185%;
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    width: 35%;
+}
+
+span {
+    color: blue;
+}
+
+main {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(20, 30px);
+    grid-gap: 6px;
+}
+
+.square {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(203, 203, 209);
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.square:hover {
+    cursor: pointer;
+    background-color: rgb(160, 160, 213);
+}

@@ -39,3 +39,7 @@ main {
     cursor: pointer;
     background-color: rgb(160, 160, 213);
 }
+
+.modal-footer {
+    opacity: 50%;
+}

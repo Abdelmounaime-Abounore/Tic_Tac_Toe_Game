@@ -8,6 +8,11 @@
     width: 35%;
 }
 
+#usernames {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 span {
     color: blue;
 }

@@ -55,11 +55,11 @@ const game = (id) => {
     if(character === 'X' && element.innerHTML == ''){
         element.innerHTML = 'X';
         character = 'O';
-        title.innerHTML = 'The turn of O';
+        title.innerHTML = 'The turn of ' + localStorage.getItem('username2');;
     } else if (character === 'O' && element.innerHTML == ''){
         element.innerHTML = 'O';
         character = 'X';
-        title.innerHTML = "The turn of X";
+        title.innerHTML = "The turn of " + localStorage.getItem('username1');;
     }
 
     squares[id] = element.innerHTML;

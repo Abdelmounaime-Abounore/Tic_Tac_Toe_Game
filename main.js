@@ -63,27 +63,31 @@ const game = (id) => {
     }
 
     squares[id] = element.innerHTML;
+    
     for(let i = 0; i < squares.length; i++){
-        if(squares[i] == squares[i+1] 
-            && squares[i+1] == squares[i+2] 
-            && squares[i+2] == squares[i+3] 
-            && squares[i+3] == squares[i+4]
-            && squares[i] != undefined) {
-            
+        if(i % 20 <= 15 // Ensure that we don't check across different rows 
+            && squares[i] != undefined 
+            && squares[i] === squares[i + 1] 
+            && squares[i + 1] === squares[i + 2] 
+            && squares[i + 2] === squares[i + 3] 
+            && squares[i + 3] === squares[i + 4]
+        ) {    
             for(let j = i; j < i + 5; j++){
                 let winnerSquare = document.getElementById(j); 
                 winnerSquare.style.backgroundColor = "green";
                 winnerSquare.style.color = "white";
             }
+
+            modalTitle.innerHTML = "The Player " +  character + " Won";
+
+            openPopup();
+            
             if(character == "X"){
                 character = "O";
             }else if (character == "O"){
                 character = "X";
             }
 
-            modalTitle.innerHTML = "The Player " +  character + " Won";
-
-            openPopup();
         } else if(squares[i] == squares[i+20] 
             && squares[i+20] == squares[i+40] 
             && squares[i+40] == squares[i+60] 

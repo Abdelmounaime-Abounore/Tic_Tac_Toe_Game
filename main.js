@@ -15,12 +15,6 @@ for(let i = 0; i < 400; i++){
     board.appendChild(square);
 }
 
-// const winner = (id) => {
-//     let squares = new Array(400);
-//     var element = document.getElementById(`square-${id}`);
-//     console.log(element);
-// }
-
 let character = 'X';
 let title = document.querySelector('.title');
 
@@ -50,6 +44,54 @@ const game = (id) => {
                 winnerSquare.style.backgroundColor = "green";
                 winnerSquare.style.color = "white";
             }
-        }
+            if(character == "X"){
+                character = "O";
+            }else if (character == "O"){
+                character = "X";
+            }
+
+            title.innerHTML = character + " Won";
+        } else if(squares[i] == squares[i+20] 
+            && squares[i+20] == squares[i+40] 
+            && squares[i+40] == squares[i+60] 
+            && squares[i+60] == squares[i+80]
+            && squares[i] != undefined) {
+
+                for(let j = i; j <= i + 80; j += 20){
+                    let winnerSquare = document.getElementById(j); 
+                    winnerSquare.style.backgroundColor = "green";
+                    winnerSquare.style.color = "white";
+                }
+                if(character == "X"){
+                    character = "O";
+                }else if (character == "O"){
+                    character = "X";
+                }
+
+                title.innerHTML = character + " Won";
+            } 
+            else if ((squares[i] == squares[i+19] 
+                && squares[i+19] == squares[i+38] 
+                && squares[i+38] == squares[i+57] 
+                && squares[i+57] == squares[i+76]
+                && squares[i] != undefined)) {
+
+                    for(let j = i; j <= i + 76; j += 19 ){
+                        let winnerSquare = document.getElementById(j); 
+                        winnerSquare.style.backgroundColor = "green";
+                        winnerSquare.style.color = "white";
+                    }
+            } else if ((squares[i] == squares[i + 21] 
+                && squares[i + 21] == squares[i + 42] 
+                && squares[i + 42] == squares[i + 63] 
+                && squares[i + 63] == squares[i + 84]
+                && squares[i] != undefined)){
+
+                    for(let j = i; j <= i + 84; j += 21){
+                        let winnerSquare = document.getElementById(j);
+                        winnerSquare.style.backgroundColor = "green";
+                        winnerSquare.style.color = "white";
+                    }
+            }
     }
 }

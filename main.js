@@ -15,7 +15,6 @@ const saveUsernamesAndScore = () => {
 
 let user1score = localStorage.getItem('user1score');
 let user2score = localStorage.getItem('user2score');
-// document.addEventListener('DOMContentLoaded', function() {
 let username1 = localStorage.getItem('username1');
 let username2 = localStorage.getItem('username2');
 
@@ -23,9 +22,7 @@ let username2 = localStorage.getItem('username2');
 document.getElementById("username1").textContent = username1;
 document.getElementById("username2").textContent = username2;
 
-// document.getElementById("score1").textContent = user1score;
-// document.getElementById("score2").textContent = user2score;
-// });
+document.getElementById("score2").textContent = user2score;
 
 let squares = new Array(400);
 
@@ -92,13 +89,11 @@ const game = (id) => {
                 winner = localStorage.getItem('username2')
                 user2score++;
                 localStorage.setItem('user2score', user2score); 
-                document.getElementById("score2").textContent = user2score;
 
             }else if (character == "O"){
                 winner = localStorage.getItem('username1')
                 user1score++;
                 localStorage.setItem('user1score', user1score); 
-                document.getElementById("score1").textContent = user1score;
             }
 
             openPopup();
@@ -106,11 +101,11 @@ const game = (id) => {
             modalTitle.innerHTML = "The Player " +  winner + " Won";
             document.getElementById("user1").textContent = username1;
             document.getElementById("user2").textContent = username2;
+            document.getElementById("score2").textContent = user2score;
+            document.getElementById("score1").textContent = user1score;
 
-            
-
-
-        } else if(squares[i] == squares[i+20] 
+        } else if(
+            squares[i] == squares[i+20] 
             && squares[i+20] == squares[i+40] 
             && squares[i+40] == squares[i+60] 
             && squares[i+60] == squares[i+80]
@@ -123,14 +118,25 @@ const game = (id) => {
                 }
                 if(character == "X"){
                     winner = localStorage.getItem('username2')
+                    user2score++;
+                    localStorage.setItem('user2score', user2score); 
                 }else if (character == "O"){
                     winner = localStorage.getItem('username1')
+                    user1score++;
+                    localStorage.setItem('user1score', user1score);
                 }
-
-                modalTitle.innerHTML ="The Player " + winner + " Won";
                 
                 openPopup();
-            } 
+
+                modalTitle.innerHTML ="The Player " + winner + " Won";
+
+                document.getElementById("user1").textContent = username1;
+                document.getElementById("user2").textContent = username2;
+                document.getElementById("score2").textContent = user2score;
+                document.getElementById("score1").textContent = user1score;    
+                
+            }
+
             else if ((squares[i] == squares[i+19] 
                 && squares[i+19] == squares[i+38] 
                 && squares[i+38] == squares[i+57] 
@@ -145,13 +151,23 @@ const game = (id) => {
 
                 if(character == "X"){
                     winner = localStorage.getItem('username2')
+                    user2score++;
+                    localStorage.setItem('user2score', user2score)
                 }else if (character == "O"){
                     winner = localStorage.getItem('username1')
+                    user1score++;
+                    localStorage.setItem('user1score', user1score)
                 }
     
                 modalTitle.innerHTML = "The Player " +  winner + " Won";
 
                 openPopup();
+
+                document.getElementById('user1').textContent = username1;
+                document.getElementById('user2').textContent = username2;
+                document.getElementById('score1').textContent = user1score;
+                document.getElementById('score2').textContent = user2score;
+
             } else if ((squares[i] == squares[i + 21] 
                 && squares[i + 21] == squares[i + 42] 
                 && squares[i + 42] == squares[i + 63] 
@@ -166,13 +182,21 @@ const game = (id) => {
 
                 if(character == "X"){
                     winner = localStorage.getItem('username2')
+                    user2score++;
+                    localStorage.setItem("user2score", user2score);
                 }else if (character == "O"){
                     winner = localStorage.getItem('username1')
+                    localStorage.setItem('user1score', user1score) 
                 }
     
                 modalTitle.innerHTML = "The Player " +  winner + " Won";
                 
                 openPopup();
+
+                document.getElementById('user1').textContent = username1;
+                document.getElementById('user2').textContent = username2;
+                document.getElementById('score1').textContent = user1score;
+                document.getElementById('score2').textContent = user2score;
             }
     }
 }

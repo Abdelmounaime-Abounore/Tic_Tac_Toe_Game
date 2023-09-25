@@ -7,25 +7,25 @@ const saveUsernamesAndScore = () => {
     localStorage.setItem('username1', username1);
     localStorage.setItem('username2', username2);
 
-    localStorage.setItem("user1score", "0");
-    localStorage.setItem("user2score", "0");
+    localStorage.setItem("user1score", 0);
+    localStorage.setItem("user2score", 0);
 }
 
 // Read names of users from Local Storage
 
-document.addEventListener('DOMContentLoaded', function() {
-    let username1 = localStorage.getItem('username1');
-    let username2 = localStorage.getItem('username2');
+let user1score = localStorage.getItem('user1score');
+let user2score = localStorage.getItem('user2score');
+// document.addEventListener('DOMContentLoaded', function() {
+let username1 = localStorage.getItem('username1');
+let username2 = localStorage.getItem('username2');
 
-    let user1score = localStorage.getItem('user1score');
-    let user2score = localStorage.getItem('user2score');
 
-    document.getElementById("username1").textContent = username1;
-    document.getElementById("username2").textContent = username2;
+document.getElementById("username1").textContent = username1;
+document.getElementById("username2").textContent = username2;
 
-    document.getElementById("score1").textContent = user1score;
-    document.getElementById("score2").textContent = user2score;
-});
+// document.getElementById("score1").textContent = user1score;
+// document.getElementById("score2").textContent = user2score;
+// });
 
 let squares = new Array(400);
 
@@ -90,15 +90,23 @@ const game = (id) => {
 
             if(character == "X"){
                 winner = localStorage.getItem('username2')
+                user2score++;
+                localStorage.setItem('user2score', user2score); 
+                document.getElementById("score2").textContent = user2score;
+
             }else if (character == "O"){
                 winner = localStorage.getItem('username1')
+                user1score++;
+                localStorage.setItem('user1score', user1score); 
+                document.getElementById("score1").textContent = user1score;
             }
 
+            openPopup();
+
             modalTitle.innerHTML = "The Player " +  winner + " Won";
-            document.getElementById("use1").textContent = username1;
+            document.getElementById("user1").textContent = username1;
             document.getElementById("user2").textContent = username2;
 
-            openPopup();
             
 
 

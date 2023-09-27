@@ -1,24 +1,52 @@
 
 body{
-    background-image: url(images/game-bg.png);
+    background-image: url(images/game-bg.jpg);
+    background-color: #362020;
     background-repeat: no-repeat;
     background-size: cover;
     color: white !important;
 }
 
 h1{
-    width: 70%;
+    width: 80%;
     margin: auto;
     text-align: center;
     font-family:"Gill Sans", sans-serif;
-    padding: 30px;
+    padding: 50px;
 }
 
 .form{
-    width: 60%;
+    width: 40%;
     margin: auto;
+    background-color: #090f16a1;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .form-group {
     margin-top: 30px;
 }
+
+             
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #FF512F 0%, #DD2476  51%, #FF512F  100%);
+    margin: 10px;
+    padding: 3%;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;          
+    box-shadow: 0 0 20px #785e5e;
+    border-radius: 10px;
+    display: block;;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; 
+  }
+
+  a {
+    color: white !important;
+  }
+ 
+    

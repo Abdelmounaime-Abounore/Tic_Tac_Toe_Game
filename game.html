@@ -11,34 +11,36 @@
 
 </head>
 <body>
-    <div class="title">
-        
-    </div>
-    <div id="usernames">
-        <p>Username (X): <span id="username1"></span></p>
-        <p>Username (O): <span id="username2"></span></p>
-    </div>
-    <main class="main">
-        <div class="board">
-        
+    <section class="game">
+        <div class="title">
+            
         </div>
-    </main>
-
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" onclick="reloadGame()">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                </div>
-                <div class="modal-body">
-                    Score: <span id="user1" class="text-primary"></span>  <span id="score1" class="text-danger"></span>  - <span id="score2" class="text-danger"></span> <span id="user2" class="text-primary"></span> 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Restart</button>
+        <div id="usernames">
+            <p>Username (X): <span id="username1"></span></p>
+            <p>Username (O): <span id="username2"></span></p>
+        </div>
+        <main class="main">
+            <div class="board">
+            
+            </div>
+        </main>
+    
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" onclick="reloadGame()">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    </div>
+                    <div class="modal-body">
+                        Score: <span id="user1" class="text-primary"></span>  <span id="score1" class="text-danger"></span>  - <span id="score2" class="text-danger"></span> <span id="user2" class="text-primary"></span> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Restart</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     
     <script src="main.js"></script>
 </body>

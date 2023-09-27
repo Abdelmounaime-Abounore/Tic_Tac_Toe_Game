@@ -1,6 +1,11 @@
-body{
+html, body{
+    height: 100%;
+}
+
+.game{
     background-image: url(./images/images.jfif);
     color: white !important;
+    height: 100%;
 }
 
 .title {
@@ -8,8 +13,8 @@ body{
     font-size: 185%;
     text-align: center;
     padding: 10px;
-    margin: 19px auto;
     width: 30%;
+    margin: auto;
 }
 
 #usernames {
@@ -25,7 +30,7 @@ span {
 
 .main {
     width: 45%;
-    margin: 25px auto;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,10 +1,15 @@
 
-body{
-    background-image: url(images/game-bg.jpg);
+html, body{
+    height: 100%;
+}
+
+.register {
+  background-image: url(images/game-bg.jpg);
     background-color: #362020;
     background-repeat: no-repeat;
     background-size: cover;
     color: white !important;
+    height: 100%;
 }
 
 h1{
